@@ -1,16 +1,19 @@
-// L2 describes name of tests/series of tests
-describe("Engineer", () => {
-    // L3 is specific test we are trying to do
-    describe("name", () => {
-        //L6 description of test
-      it("it should return a name", () => {
-          
-        const str = "Hello World!";
-        const reversed = "!dlroW olleH";
-  
-        const result = new Algo().reverse(str);
-  
-        expect(result).toEqual(reversed);
-      });
-    });
+const Engineer = require("../lib/Engineer");
+
+test("Can set GitHUb account via constructor", () => {
+  const testValue = "GitHubUser";
+  const e = new Engineer("Foo", 1, "test@test.com", testValue);
+  expect(e.github).toBe(testValue);
+});
+
+test("getRole() should return \"Engineer\"", () => {
+  const testValue = "Engineer";
+  const e = new Engineer("Foo", 1, "test@test.com", "GitHubUser");
+  expect(e.getRole()).toBe(testValue);
+});
+
+test("Can get GitHub username via getGithub()", () => {
+  const testValue = "GitHubUser";
+  const e = new Engineer("Foo", 1, "test@test.com", testValue);
+  expect(e.getGithub()).toBe(testValue);
 });
