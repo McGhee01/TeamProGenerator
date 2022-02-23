@@ -1,6 +1,6 @@
 
 const fs = require("fs");const inquirer = require("inquirer");
-const generateMarkdown = require("./Template/generateHTML");
+const generateHTML = require("./Template/generateHTML");
 
 // TODO: Create an array of questions for user input
 const questions = [];
@@ -27,30 +27,30 @@ inquirer
     },
     {
       type: "input",
-      message: " Please enter the name of teh employee here.",
-      name: `getName()`,
+      message: " Please enter the name of the employee here.",
+      name: `getName`,
     },
     {
       type: "input",
       message: " What is the employee's ID?",
-      name: `getId()`,
+      name: `getId`,
     },
     {
       type: "input",
-      message: "What can you use this for in the future? ",
-      name: `getEmail()`,
+      message: "What is the email of tis employee? ",
+      name: `getEmail`,
     },
     {
       type: "input",
       message: " What is the role of this employee?",
-      name: `getRole()`,
+      name: `getRole`,
     },
 ]) 
 
   .then((data) => {
-    const filename = `${data.title.toLowerCase().split(' ').join('')}.md`;
-
-    fs.writeFile(filename, generateMarkdown(data, null, '\t'), (err) =>
+    const filename = `${data.name.toLowerCase().split(' ').join('')}.md`;
+ console.log(data)
+    fs.writeFile(filename, generateHTML([data]), (err) =>
       err ? console.log(err) : console.log('Success!')
     );
   });
