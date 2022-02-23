@@ -1,16 +1,19 @@
-// L2 describes name of tests/series of tests
-describe("Intern", () => {
-    // L3 is specific test we are trying to do
-    describe("name", () => {
-        //L6 description of test
-      it("it should return a name", () => {
-          
-        const str = "Hello World!";
-        const reversed = "!dlroW olleH";
-  
-        const result = new Algo().reverse(str);
-  
-        expect(result).toEqual(reversed);
-      });
-    });
+const Intern = require("../lib/Intern");
+
+test("Can set school via constructor", () => {
+  const testValue = "UCLA";
+  const e = new Intern("Foo", 1, "test@test.com", testValue);
+  expect(e.school).toBe(testValue);
+});
+
+test("getRole() should return \"Intern\"", () => {
+  const testValue = "Intern";
+  const e = new Intern("Foo", 1, "test@test.com", "UCLA");
+  expect(e.getRole()).toBe(testValue);
+});
+
+test("Can get school via getSchool()", () => {
+  const testValue = "UCLA";
+  const e = new Intern("Foo", 1, "test@test.com", testValue);
+  expect(e.getSchool()).toBe(testValue);
 });
