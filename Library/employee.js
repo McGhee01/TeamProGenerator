@@ -1,4 +1,3 @@
-const { Module } = require("module");
 
 // Make these as broad statements. YOU CAN ALWAYS USE THIS AGAIN
 class Employee {
