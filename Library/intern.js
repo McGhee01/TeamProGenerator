@@ -4,8 +4,9 @@ const Employee = require("../Library/employee");
 // Make these as broad statements. YOU CAN ALWAYS USE THIS AGAIN
 class Intern extends Employee {
     constructor(name, id, email, school) {
-      this.school = school;
-      super(name,id, email);
+    super(name,id, email);
+    this.school = school;
+      
 
     }
     // This will return your name
